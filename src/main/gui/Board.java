@@ -14,14 +14,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
+// import java.awt.geom.Area;  check for this library 
+
 public class Board extends JFrame {
 	/*
-	 * Creation of GRID
-	 * Division of grid into AREAS
-	 * Definition of Ant in terms of visual
-	 * Definition of Resources in terms of visual
-	 * Definition of Movement
-	 * Capabilities in terms of visual
+	 * Creation of GRID Division of grid into AREAS Definition of Ant in terms
+	 * of visual Definition of Resources in terms of visual Definition of
+	 * Movement Capabilities in terms of visual
 	 */
 
 	/**
@@ -30,6 +29,7 @@ public class Board extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	private final Cell[][] cells = new Cell[10][10];
+	// private final Areas[][] areas = new Areas[2][2];
 
 	JButton jbtnExit = new JButton("Exit");
 
@@ -39,6 +39,10 @@ public class Board extends JFrame {
 			for (int j = 0; j < 10; j++) {
 				panel.add(cells[i][j] = new Cell());
 			}
+			/*
+			 * for (int j = 0; j < 10; j++) { panel.add((areas[i][j] = new
+			 * Areas()); }
+			 */
 		}
 
 		panel.setBorder(new LineBorder(Color.BLACK, 1));
@@ -107,6 +111,22 @@ public class Board extends JFrame {
 			token = c;
 			repaint();
 		}
+
+		/*
+		 * public class Areas extends JPanel {
+		 * 
+		 * private static final long serialVersionUID = 1L; private char token =
+		 * ' ';
+		 * 
+		 * public Areas() { setBorder(new LineBorder(Color.YELLOW, 2));
+		 * addMouseListener(new MyMouseListener()); }
+		 * 
+		 * public char getToken() { return token; }
+		 * 
+		 * public void setToken(char c) { token = c; repaint(); }
+		 * 
+		 * }
+		 */
 
 		@Override
 		protected void paintComponent(Graphics g) {
